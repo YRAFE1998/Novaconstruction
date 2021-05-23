@@ -70,7 +70,7 @@ export const Collapsedheader = (props) => {
             </Typography>
           </Toolbar>
         </AppBar>
-            {/*<Collapsedmenu open={collapsedmenuisopen} menuitems={props.menuitems} activeitem={activeitem} />*/}
+            <Collapsedmenu open={collapsedmenuisopen} menuitems={props.menuitems} activeitem={activeitem} />
         </>
     )
 }
