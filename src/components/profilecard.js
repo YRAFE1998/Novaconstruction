@@ -3,7 +3,7 @@ import { H5, H6 } from "../styledcomponents/text"
 
 export const Profilecard = (props) => {
     return(
-        <Row className='text-center'>
+        <Row className='text-center text-gold'>
             <Col xs="12">
                 <img src={props.image} className='profileimage' />
             </Col>

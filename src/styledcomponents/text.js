@@ -2,37 +2,34 @@ import styled from 'styled-components';
 import '../styles/styles.css'
 
 export const H1 = styled.h1`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
 export const H2 = styled.h2`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
 export const H3 = styled.h3`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
 export const H4 = styled.h4`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
 export const H5 = styled.h5`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
 export const H6 = styled.h6`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
+`;
+export const H7 = styled.h6`
+    font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
+    font-size:0.8rem !important;
 `;
 
 export const P = styled.p`
-    color:gold;
     font-family:${props => 'primary' + (props.fontstyle ? ("-" + props.fontstyle) : "")};
 `;
 
@@ -74,7 +71,7 @@ export const Secondaryp = styled.p`
 `;
 
 export const BlockTitle = styled.h4`
-    color:gold;
+    color: #cdb068;
     font-family:'primary';
 
 `;

@@ -31,9 +31,9 @@ export const Styledblock = (props) => {
                     </Zoom>
                     </Col>
             </Row>
-            <Container className="my-auto">
-                <Row className="mt-5">
-                    <Col xs="12 text-white">
+            <Container className="my-auto px-5">
+                <Row className="mt-5 px-5">
+                    <Col xs="12" className="text-white">
                         <Fade>
                             {props.children}
                         </Fade>

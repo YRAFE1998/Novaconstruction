@@ -56,11 +56,11 @@ export const Collapsedheader = (props) => {
     }
     return(
         <>
-        <AppBar position="fixed" color="transparent" style={{boxShadow:'none'}}>
+        <AppBar position="fixed" color="transparent" style={{boxShadow:'none',zIndex:'999999'}} >
           <Toolbar variant="dense">
             <IconButton edge="start" className="" color="inherit" aria-label="menu">
               <button className="unstyledbutton" onClick={() => opencollapsedmenu()}>
-                <Colortransition transitioncolor="white" initialcolor='gold' open={collapsedmenuisopen}>
+                <Colortransition transitioncolor="white" initialcolor='#cdb068' open={collapsedmenuisopen}>
                   <span className="fas fa-bars" style={{color:'inherit'}} style={{filter:'drop-shadow'}}> </span>
                 </Colortransition>
               </button>
@@ -97,7 +97,7 @@ export const Collapsedmenu = (props) => {
       
     return (
         <Fadetransition open={props.open}>
-            <Container fluid={true} className="collapsedmenucontainer pt-5">
+            <Container fluid={true} className="prep collapsedmenucontainer text-white pt-5 container-fluid d-flex justify-content-start flex-column align-items-center">
                 <Row>
                     {navitems}
                 </Row>
