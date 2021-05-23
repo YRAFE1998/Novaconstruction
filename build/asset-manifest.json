@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.568f3103.chunk.css",
+    "main.js": "/static/js/main.4f8e6822.chunk.js",
+    "main.js.map": "/static/js/main.4f8e6822.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.72217603.js",
+    "runtime-main.js.map": "/static/js/runtime-main.72217603.js.map",
+    "static/css/2.3d0019c5.chunk.css": "/static/css/2.3d0019c5.chunk.css",
+    "static/js/2.fc73eeb8.chunk.js": "/static/js/2.fc73eeb8.chunk.js",
+    "static/js/2.fc73eeb8.chunk.js.map": "/static/js/2.fc73eeb8.chunk.js.map",
+    "static/js/3.a8948ec6.chunk.js": "/static/js/3.a8948ec6.chunk.js",
+    "static/js/3.a8948ec6.chunk.js.map": "/static/js/3.a8948ec6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.3d0019c5.chunk.css.map": "/static/css/2.3d0019c5.chunk.css.map",
+    "static/css/main.568f3103.chunk.css.map": "/static/css/main.568f3103.chunk.css.map",
+    "static/js/2.fc73eeb8.chunk.js.LICENSE.txt": "/static/js/2.fc73eeb8.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/static/media/OpenSans-SemiBoldItalic.63afadba.ttf",
+    "static/media/all.min.css": "/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72217603.js",
+    "static/css/2.3d0019c5.chunk.css",
+    "static/js/2.fc73eeb8.chunk.js",
+    "static/css/main.568f3103.chunk.css",
+    "static/js/main.4f8e6822.chunk.js"
+  ]
+}
