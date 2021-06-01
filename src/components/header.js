@@ -10,16 +10,17 @@ import {
     NavLink,
     NavbarText
   } from 'reactstrap';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
   
 export const HeaderBar = (props) => {
-    const activeitem = props.activeitem
+    const activeitem = props.activeitem;
     const [navitems, setnavitems] = useState(); 
-    useEffect(() =>{
+    /*useEffect(() =>{
         getNavitems();
     }    
-    ,[])
+    ,[])*/
 
-    const getNavitems = () => {
+    /*const getNavitems = () => {
         const menuitems = props.menuitems.map((item, index) => {
             const classname = index == activeitem? "collapsednavitem active" : "collapsednavitem";
             return (
@@ -30,20 +31,19 @@ export const HeaderBar = (props) => {
         });
         setnavitems(menuitems);
         
-    }
+    }*/
     return (
-      <div>
-        <Navbar color="light" fixed="top" expand="md" light className="d-none custom-navbar bg-transparent"> {/* d-md-flex" */} 
+        
+        <div >
+        {/*<Navbar color="light" fixed="top" expand="md" light className="d-none custom-navbar bg-transparent">
           <NavbarBrand href="/" className="mx-3">Nova</NavbarBrand>
             <Nav className="mx-auto" navbar>
               {navitems}
             </Nav>
             <NavbarText className="mx-3">Simple Text</NavbarText>
-        </Navbar>
-        <div className="">
-            <Collapsedheader className="" menuitems={props.menuitems} activeitem={activeitem} />
+        </Navbar>*/}
+            <Collapsedheader className="" activeitem={activeitem} />
         </div>
-      </div>
     );
 
 }
@@ -54,6 +54,7 @@ export const Collapsedheader = (props) => {
     const opencollapsedmenu = () =>{
         setcollapsedmenuisopen(!collapsedmenuisopen);
     }
+    const navigationmap = require('../mocks/navigation').navigationmap;
     return(
         <>
         <AppBar position="fixed" color="transparent" style={{boxShadow:'none',zIndex:'999999'}} >
@@ -70,7 +71,7 @@ export const Collapsedheader = (props) => {
             </Typography>
           </Toolbar>
         </AppBar>
-            <Collapsedmenu open={collapsedmenuisopen} menuitems={props.menuitems} activeitem={activeitem} />
+            <Collapsedmenu open={collapsedmenuisopen} menuitems={navigationmap} activeitem={activeitem} />
         </>
     )
 }
@@ -88,7 +89,7 @@ export const Collapsedmenu = (props) => {
             const classname = index == activeitem? "collapsednavitem active  my-3" : "collapsednavitem my-3";
             return (
                 <Col xs="12" className={classname} >
-                    <h1>{item}</h1>
+                    <Link to={item.path} style={{color:'white', textDecoration:'none'}}><h1 class="biggerhover">{item.name}</h1></Link>
                 </Col>
             );
         })

@@ -1,4 +1,8 @@
 import { Transition } from 'react-transition-group';
+import $ from 'jquery';
+import { useContext, useEffect, useState } from 'react';
+import { Offsetcontext } from '../context';
+
 
 export const Fadetransition = (props) =>{    
         const duration = 300;
@@ -29,6 +33,8 @@ export const Fadetransition = (props) =>{
         );
 }
 
+
+
 export const Colortransition = (props) =>{    
   const duration = 300;
   const defaultStyle = {
@@ -56,4 +62,14 @@ export const Colortransition = (props) =>{
         )}
       </Transition>
   );
+}
+
+
+export const Backgroundtransition = (props) => {
+  const offsetY = useContext(Offsetcontext);
+  return(
+    <div className="parallex_content" style={{backgroundImage:'url("assets/images/1.png")',backgroundPositionY:`-${(offsetY * 0.5)}px`}}>
+    </div>
+  );
+      
 }

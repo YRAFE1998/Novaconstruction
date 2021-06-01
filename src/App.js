@@ -1,22 +1,54 @@
-import logo from './logo.svg';
-import HeaderBar from './components/header';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/styles.css'
-import PageHeading from './components/pageheading'
-import {Whoweareblock, Partnershipblock, Clientsblock, OurTeamBlock} from './components/Homepageblocks';
-import { Projectsblock } from './components/projectsblock';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import HomePage from './pages/home';
+import Aboutuspage from './pages/aboutus';
+import { ProductsPage } from './pages/products';
+import { Offsetcontext } from './context';
+import { useEffect, useState } from 'react';
+
+
 function App() {
+ 
+  const [offsetY, setoffsetY] = useState(0);
+  const handleScroll = () => setoffsetY(window.pageYOffset);
+  
+  useEffect(()=> {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  }
+  ,[]);
+
   return (
     <>
-    <HeaderBar  menuitems={["Home", "Contact Us", "About Us", "Products"]} activeitem={0}/>
-    <PageHeading>  
-    </PageHeading>
-    <Whoweareblock />
-    <Partnershipblock />
-    <Projectsblock />
-    <Clientsblock />
-    <OurTeamBlock />
+   
+    <Router basename="/">
+      <Switch>
+      <Offsetcontext.Provider value={offsetY}>
+        <Route path="/aboutus">
+
+          <Aboutuspage />
+        </Route>
+        
+        <Route path="/contactus">
+          
+        </Route>
+        
+        <Route path="/products">
+          <ProductsPage />
+        </Route>
+        
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route >
+          <Redirect to="/" />
+        </Route>
+      </Offsetcontext.Provider>
+      </Switch>
+    </Router>
     </>
   );
 }
