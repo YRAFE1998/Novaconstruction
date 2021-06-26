@@ -71,7 +71,22 @@ export const Secondaryp = styled.p`
 `;
 
 export const BlockTitle = styled.h4`
-    color: #cdb068;
-    font-family:'primary';
+    color: ${props=> props.color};
+    font-family:'secondary-bold';
 
+`;
+
+export const BlockTitleslim = styled.h4`
+    color: ${props=> props.color};
+    font-family:'secondary-light';
+`;
+
+export const BlockTitleBig = styled.h1`
+    color: ${props=> props.color};
+    font-family:'secondary-bold';
+`;
+
+export const BlockTitlesmall = styled.h5`
+    color: ${props=> props.color};
+    font-family:'primary-bold';
 `;

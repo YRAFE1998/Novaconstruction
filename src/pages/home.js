@@ -2,38 +2,26 @@ import HeaderBar from '../components/header';
 import PageHeading from '../components/pageheading'
 import {Whoweareblock, Partnershipblock, Clientsblock, OurTeamBlock} from '../components/Homepageblocks';
 import { Projectsblock } from '../components/projectsblock';
-import {Backgroundtransition} from '../utils/animations';
+import Form from '../components/contactusform';
 import '../scripts/script';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 export const HomePage = (props) => {
-    const [loaded, setloaded] = useState(false);
-  
-  
     useEffect(() => {
-      const el = document.getElementById("spinner");
-        if (el) {
-          el.remove();
-          setloaded(true);
-        }
-  
+          window.scrollTo(0, 0);
     },[]);
   
     return(
         <>
-        {loaded &&
-        <section style={{position:'relative'}}>
-        <Backgroundtransition />
-        <HeaderBar  menuitems={["Home", "Contact Us", "About Us", "Products"]} activeitem={0}/>
+        <HeaderBar activeitem={0}/>
         <PageHeading/>  
         <Whoweareblock />
-        <Partnershipblock />
         <Projectsblock />
+        <Partnershipblock />
         <Clientsblock />
         <OurTeamBlock />
-        </section>
-        }
+        <Form color="white" />
         </>
     );
 }
