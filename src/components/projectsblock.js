@@ -106,9 +106,7 @@ const BootstrapBigCarousel = (props) => {
 }
 
 
-export const Projectsblock = (props) => {
-  const [listindex,setlistindex] = useState(0);
-  
+export const Projectsblock = (props) => {  
   const items = [
         {
           name:'COSMEC',
@@ -303,39 +301,39 @@ export const Projectsblock = (props) => {
   });
   ;
 
-  const item = props.showall?singleitem:singleitem[0];
+  const item = props.showall?singleitem:[singleitem[0]];
   const blockclasses = props.paddingtop ? "text-center align-self-start mx-auto pt-5": "text-center align-self-start mx-auto";
-  return(
-      <Container style={{minHeight:'100vh', position:'relative'}} fluid={true} className="py-xl-4 px-md-5 bg-navy d-flex flex-column justify-content-around" id="products">
-          <img src="/assets/images/ba7.jpg" style={{position: 'absolute', top:0, width: '100%',height: '100%',left: 0,objectFit: 'cover', opacity:'0.1', zIndex:'1'}} />
-          <Row className={blockclasses} style={{width:'100%', zIndex:'2'}}>
+  const content = item.map((item,index)=> {
+    var showbg = !!!(index %2);
+    if(!props.showall)
+      showbg =true;
+    console.log(showbg)
+    return(
+    <Container style={{minHeight:'100vh', position:'relative'}} fluid={true} className={"py-xl-4 px-md-5 d-flex flex-column justify-content-around " + (showbg ? "bg-darkgrey":"force-text-dark")} id="products">
+          {showbg &&<img src="/assets/images/ba7.jpg" style={{position: 'absolute', top:0, width: '100%',height: '100%',left: 0,objectFit: 'cover', opacity:'0.1', zIndex:'1'}} />
+          }<Row className={blockclasses} style={{width:'100%', zIndex:'2'}}>
+          {!props.showall &&
               <Col xs="12" className="mt-5">
                   <Zoom>
                       <BlockTitle color="white">
-                      <hr className="me-3" style={{display:'inline-block',verticalAlign:'middle'}}/>OUR PROJECTS<hr className="ms-3" style={{display:'inline-block',verticalAlign:'middle'}}/>
- 
+                      <>
+                      <hr className="me-3" style={{display:'inline-block',verticalAlign:'middle'}}/> OUR PROJECTS <hr className="ms-3" style={{display:'inline-block',verticalAlign:'middle'}}/></>
                       </BlockTitle>
                   </Zoom>
+              
               </Col>
-              <Col xs='12' style={{height:''}}>
+              }
+              <Col xs='12' style={{height:''}} className="text-black">
                 {item}
-              </Col>
-              <Col xs='12' className="my-5">   
-              {/*<Row className='text-white'>    
-              <Col xs='6' className="text-center">       
-              <button onClick={() => previous()} className='unstyledbtn text-white'>
-              <H5 fontstyle="extrabold">&lt;  See previous project </H5>
-              </button>
-              </Col>
-              <Col xs='6' className="text-center">
-              <button onClick={() => next()} className='unstyledbtn text-white'>
-               <H5 fontstyle="extrabold"> See next project  &gt; </H5>
-              </button>
-              </Col>
-              </Row>*/}
               </Col>
           </Row>
           
       </Container>
+    );
+  })
+  return(
+      <>
+      {content}
+      </>
   );
 }

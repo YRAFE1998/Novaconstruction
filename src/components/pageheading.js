@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const PageHeading = (props) => {
     const Scrolltofirstblock = ()=> scrolltofirstblock();
     return(
-        <Jumbotron style={{ minHeight:'100vh', position:'relative', backgroundImage:'black', backgroundImage:'url("assets/images/ba10.jpg")',borderRadius:'none'}} className="d-flex align-items-stretch mb-0 page-heading-background" id="pageheading">
+        <Jumbotron style={{ minHeight:'100vh', position:'relative', backgroundImage:'black', backgroundImage:'url("assets/images/ba10.jpg")',borderRadius:'none'}} className="d-flex align-items-stretch mb-0 page-heading-background backgroundzoomonhover" id="pageheading">
         <div className="pageheader-background-image" style={{opacity:'0.7'}}/>
             <Container style={{zIndex:'2'}} className="pb-4">
                 <Row className="d-flex align-items-end" style={{height:'100%'}}>

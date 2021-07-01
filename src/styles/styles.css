@@ -147,6 +147,10 @@ body{
     max-height: 100%;
     max-width: 100%;
 }
+.imgfit100{
+    width: 100%;
+    height: 100%;
+}
 
 .text-white{
     color: #FFFFFF;
@@ -175,6 +179,10 @@ body{
 }
 .bg-navy{
     background-color: #4d61b2;
+}
+
+.bg-darkgrey{
+    background-color: #222222;
 }
 .bg-black{
     background-color: black;
@@ -567,32 +575,32 @@ a.unstyled:hover{
 }
 
 .header-notransition-bg-color{
-    background-color: white;
+    background-color: #222222;
     border-radius: 0px 0px 100px 100px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 
 .header-notransition-bg-color a.active{
-    color: #4d61b2 !important;
+    color: white !important;
 }
 
 .header-notransition-bg-color a{
-    color: #4d61b2 !important;
+    color: white !important;
 }
 
 .transition-bgcolor{
-    background-color: white;
+    background-color: #222222;
     border-radius: 0px 0px 100px 100px;
     transition: background-color 1s;
 }
 
 .transition-bgcolor a.active{
-    color: #4d61b2 !important;
+    color: white !important;
     transition: color 1s;
 }
 
 .transition-bgcolor a{
-    color: #4d61b2 !important;
+    color: white !important;
     transition: color 1s;
 }
 
@@ -601,12 +609,12 @@ a.unstyled:hover{
 }
 
 .transition-bgcolor a.active:hover{
-    color: #4d61b2 !important;
+    color: #cdb068 !important;
 }
 
 
 .transition-bgcolor a:hover{
-    color: navy !important;
+    color: #cdb068 !important;
 }
 
 .transition-bgcolor{
@@ -615,4 +623,38 @@ a.unstyled:hover{
 
 .nav-link{
     font-family: 'primary-light';
+}
+.force-text-dark h4{
+    color: black !important;
+}
+.force-text-dark h6{
+    color: black !important;
+}
+
+.zoom-on-hover:hover{
+    transform: perspective(1000px) translateZ(10px);
+    transition: 0.3s;
+}
+
+
+.zoom-on-hover-100:hover{
+    transform: perspective(1000px) translateZ(100px);
+    transition: 0.3s;
+}
+.zoom-on-hover-100{
+    transition: 0.3s;
+}
+
+.zoom-on-hover{
+    transition: 0.3s;
+}
+
+.backgroundzoomonhover:hover{
+    background-size: 110% cover;
+    transition: 0.5s;
+}
+
+.backgroundzoomonhover{
+    background-size: 100% cover;
+    transition: 0.5s;
 }

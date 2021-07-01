@@ -157,7 +157,9 @@ export const Clientsblock = (props) => {
     const logosbig = clientslogos.map((item)=>{
         return(
             <Col xs='6' md='3' lg='2' className="d-md-flex d-none align-items-center justify-content-center my-2">
-                <img src={`${item}`} className='imgfit'/>
+                <div className="imgfit">
+                    <img src={`${item}`} className='imgfit100 zoom-on-hover-100'/>
+                </div>
             </Col>
         );
     });

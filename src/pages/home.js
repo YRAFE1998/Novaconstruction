@@ -20,8 +20,9 @@ export const HomePage = (props) => {
         <Projectsblock />
         <Partnershipblock />
         <Clientsblock />
-        <OurTeamBlock />
-        <Form color="white" />
+        {//<OurTeamBlock />
+        }
+        <Form />
         </>
     );
 }

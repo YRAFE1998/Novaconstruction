@@ -11,7 +11,7 @@ export const GoldButton = styled.button`
 
 export const BlueButton = styled.button`
     font-family:'primary-medium';
-    color:#4d61b2;
+    color:#222222;
     background-color:white;
     border:none;
     padding:0.7rem 1rem;
