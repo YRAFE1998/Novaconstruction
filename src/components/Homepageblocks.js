@@ -1,22 +1,88 @@
 import Styledblock, { Styledblock1 } from './styledblock';
-import {H5,H3,Secondary5,BlockTitle, BlockTitleBig,Secondary3,Secondary4} from '../styledcomponents/text';
-import { Carousel, CarouselControl, CarouselIndicators, CarouselItem, Col, Container, Row } from "reactstrap"
+import {H5,H3, BlockTitleBig,Secondary3} from '../styledcomponents/text';
+import { Col, Container, Row } from "reactstrap"
+import {GoldButton} from '../styledcomponents/buttons';
 import { Foundercard, Profilecard } from "./profilecard";
 import Zoom from 'react-reveal/Zoom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const clientslogos = [
-"assets/images/clientslogos/1.png","assets/images/clientslogos/2.png",
-"assets/images/clientslogos/3.png","assets/images/clientslogos/4.png",
-"assets/images/clientslogos/5.png","assets/images/clientslogos/6.png",
-"assets/images/clientslogos/7.png","assets/images/clientslogos/8.png",
-"assets/images/clientslogos/9.png","assets/images/clientslogos/10.png",
-"assets/images/clientslogos/11.png","assets/images/clientslogos/12.png",
-"assets/images/clientslogos/13.png","assets/images/clientslogos/14.png",
-"assets/images/clientslogos/15.png","assets/images/clientslogos/16.png",
-"assets/images/clientslogos/17.png", "assets/images/clientslogos/18.png",
-"assets/images/clientslogos/19.png"]
+{
+    "path":"assets/images/clientslogos/1.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig5"
+},
+{
+    "path":"assets/images/clientslogos/2.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig6"
+},
+{
+    "path":"assets/images/clientslogos/3.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih5"
+},
+{
+    "path":"assets/images/clientslogos/4.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih2"
+},
+{
+    "path":"assets/images/clientslogos/5.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig7"
+},
+{
+    "path":"assets/images/clientslogos/6.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig3"
+},
+{
+    "path":"assets/images/clientslogos/7.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig1"
+},
+{
+    "path":"assets/images/clientslogos/8.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig2"
+},
+{
+    "path":"assets/images/clientslogos/9.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig4"
+},
+{
+    "path":"assets/images/clientslogos/10.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih6"
+},
+{
+    "path":"assets/images/clientslogos/11.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig9"
+},
+{
+    "path":"assets/images/clientslogos/12.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig8"
+},
+{
+    "path":"assets/images/clientslogos/13.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih4"
+},
+{
+    "path":"assets/images/clientslogos/14.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih7"
+},
+{
+    "path":"assets/images/clientslogos/15.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ii1"
+},
+{
+    "path":"assets/images/clientslogos/16.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih3"
+},
+{
+    "path":"assets/images/clientslogos/17.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih1"
+},
+{
+    "path": "assets/images/clientslogos/18.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih9"
+},
+{   "path":"assets/images/clientslogos/19.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih8"
+}]
 
 const BootstrapCarousel = (props) => {
     const indicators = props.items.map((item, index) =>{
@@ -158,14 +224,14 @@ export const Clientsblock = (props) => {
         return(
             <Col xs='6' md='3' lg='2' className="d-md-flex d-none align-items-center justify-content-center my-2">
                 <div className="imgfit">
-                    <img src={`${item}`} className='imgfit100 zoom-on-hover-100'/>
+                    <Link to={"/products?id=" + item.id}><img src={`${item.path}`} className='imgfit100 zoom-on-hover-100'/></Link>
                 </div>
             </Col>
         );
     });
     const logossmall =  <Col xs='12' className='d-block d-md-none'> <BootstrapCarousel items={clientslogos} /></Col>
     return(
-    <Styledblock1 bg='white' title='CLIENTS' subtitle='We have worked with some amazing companies around the world' backgroundpath={4} id="clients">
+    <Styledblock1 bg='white' title='OUR PARTNERS' subtitle='We have worked with some amazing companies around the world' backgroundpath={4} id="clients">
         <Container style={{backdropFilter: 'blur(3px)',backgroundColor: '#FFFFFF2F'}}>
             <Row className='mt-5'>
                 <Col xs='12' className="text-center">
@@ -178,4 +244,37 @@ export const Clientsblock = (props) => {
         </Container>
     </Styledblock1>
     )
+}
+
+export const Features = (props)=>{
+    return(
+    <Styledblock bg={props.color} title='FEATURES' subtitle='' backimage="/assets/images/ba5.jpg">
+        <Container style={{backdropFilter: 'blur(3px)'}}>
+            <Row className='mt-5 p-5' style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
+                <Col xs="6">
+                    <H5>
+                        We Provide plenty of Features Labore ullamco esse commodo enim do labore amet pariatur in consequat sint.Qui non aliqua incididunt in nulla laboris cillum tempor aliqua adipisicing labore sunt voluptate. Ex eiusmod culpa pariatur dolor sunt dolore dolor anim magna et nulla. Pariatur sunt officia nulla deserunt dolore anim esse laboris aliqua reprehenderit id est elit. Amet sunt cillum nostrud adipisicing sit sint commodo. Culpa ex ut ea adipisicing deserunt labore est tempor.
+                    </H5>
+                    <GoldButton className="mt-4">
+                        <Link to="/contactus" className="unstyled" >
+                          Get in Touch
+                        </Link> 
+                    </GoldButton>
+                </Col>
+                <Col xs='6' className="text-center p-3 d-flex flex-column" >
+                    <Row className="my-auto" style={{fontSize:"1.3rem"}}>
+                        <Col xs='12' lg='6'>
+                            <i class="fas fa-universal-access fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> After Sales</span>
+                        </Col>
+                        <Col xs='12' lg='6' >
+                            <i class="fas fa-info-circle fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> Customer support</span>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
+    </Styledblock>  
+    );
 }

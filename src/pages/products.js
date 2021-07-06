@@ -8,7 +8,7 @@ export const ProductsPage = (props) => {
     },[])
     return(
         <>
-        <HeaderBar activeitem={3}/>
+        <HeaderBar activeitem={3} notransition/>
         <Projectsblock showall={true} paddingtop/>
         </>
     )

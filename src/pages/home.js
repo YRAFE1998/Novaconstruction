@@ -16,10 +16,11 @@ export const HomePage = (props) => {
         <>
         <HeaderBar activeitem={0}/>
         <PageHeading/>  
-        <Whoweareblock />
-        <Projectsblock />
-        <Partnershipblock />
         <Clientsblock />
+        <Whoweareblock />
+        {//<Projectsblock />
+        }
+        <Partnershipblock />
         {//<OurTeamBlock />
         }
         <Form />

@@ -3,7 +3,7 @@ import '../styles/styles.css'
 
 export const GoldButton = styled.button`
     font-family:'primary-medium';
-    background-color:#cdb068;
+    background-color:#ffbd00;
     color:black;
     border:none;
     padding:0.7rem 1rem;
@@ -11,7 +11,7 @@ export const GoldButton = styled.button`
 
 export const BlueButton = styled.button`
     font-family:'primary-medium';
-    color:#222222;
+    color:#444444;
     background-color:white;
     border:none;
     padding:0.7rem 1rem;

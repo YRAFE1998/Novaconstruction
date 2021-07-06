@@ -1,4 +1,4 @@
-import { Input, InputLabel,FormHelperText } from '@material-ui/core';
+import { Input, InputLabel,FormHelperText,TextField } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import { useState } from 'react';
 import {Container, Row, Col} from 'reactstrap';
@@ -41,62 +41,56 @@ export const Form = (props) => {
       setform({...form, [state]:value.target.value});
     };
     return(
-        <Styledblock bg={props.color} title='Contact Us' subtitle='' backgroundpath={5} id="contactus" backimage="/assets/images/ba2.jpg">
+        <Styledblock bg={props.color} title='CONTACT US' subtitle='' backgroundpath={5} id="contactus" backimage="/assets/images/ba2.jpg">
         <Container fluid={true} className="mt-md-5 px-0 px-md-auto text-primarybold">
-            <Container className="px-lg-5 text-center"  id={props.color=="white"?"":"formwhite"}>
+            <Container className="px-lg-5 text-center py-4 rounded" style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}} id={props.color=="white"?"":"formwhite"}>
             <form onSubmit={(e) => submit(e)}>
                 <Row>
-                <Col xs='12' className="px-md-5">
+                <Col xs='12' md='6' className="px-md-5">
                 <Row className="my-3">
-                    <Col xs='12' md='6' className="px-md-5">
+                    <Col xs='12' className="px-md-5 my-1">
                             <FormControl className='w-100 text-white'>
                               <InputLabel className="text-primarybold" color="secondary" htmlFor="my-input">YOUR NAME</InputLabel>
                               <Input onChange={(e) => inputchange(e,"name")} error={!!emailerror} helpe="Please enter a valid email address" id="my-input" aria-describedby="my-helper-text" />
                               <FormHelperText error={true} >{nameerror}</FormHelperText>
                             </FormControl>
                     </Col>
-                    <Col xs='12' md='6' className="px-md-5">
+                    <Col xs='12' className="px-md-5 my-1">
                             <FormControl className='w-100'>
                               <InputLabel htmlFor="my-input">YOUR EMAIL</InputLabel>
                               <Input onChange={(e) => inputchange(e,"email")} error={!!nameerror} id="my-input" aria-describedby="my-helper-text" />
                               <FormHelperText error={true}>{emailerror}</FormHelperText>
                             </FormControl>
                     </Col>
-                </Row>
-                </Col>
-                <Col xs='12' className="px-md-5">
-                <Row className="my-3">
-                <Col xs='12' md='4' className="px-md-5">
+                    <Col xs='12' className="px-md-5 my-1">
                             <FormControl className='w-100'>
                               <InputLabel htmlFor="my-input">PHONE</InputLabel>
                               <Input onChange={(e) => inputchange(e,"phone")} error={!!phoneerror} id="my-input" aria-describedby="my-helper-text" />
                               <FormHelperText error={true}>{phoneerror}</FormHelperText>
                             </FormControl>
                     </Col>
-                    <Col xs='12' md='4' className="px-md-5">
+                    <Col xs='12' className="px-md-5 my-1">
                             <FormControl className='w-100'>
                               <InputLabel htmlFor="my-input">COMPANY</InputLabel>
                               <Input onChange={(e) => inputchange(e,"company")} error={!!companyerror} id="my-input" aria-describedby="my-helper-text" />
                               <FormHelperText error={true}>{companyerror}</FormHelperText>
                             </FormControl>
                     </Col>
-                    <Col xs='12' md='4' className="px-md-5">
-                            <FormControl className='w-100'>
-                              <InputLabel htmlFor="my-input">SUBJECT</InputLabel>
-                              <Input onChange={(e) => inputchange(e,"subject")} error={!!subjecterror} id="my-input" aria-describedby="my-helper-text" />
-                              <FormHelperText error={true}>{subjecterror}</FormHelperText>                              
-                            </FormControl>
-                    </Col>
-                    </Row>
+                
+                </Row>
                 </Col>
-                <Col xs='12' className="px-md-5">
+                <Col xs='6' className="px-md-5">
                 <Row className="my-3">
-                    <Col xs='12' className="px-md-5">
-                            <FormControl className="w-100">
-                              <InputLabel htmlFor="my-input">MESSAGE</InputLabel>
-                              <Input onChange={(e) => inputchange(e,"message")} error={!!messageerror} multiline id="my-input" aria-describedby="my-helper-text" />
-                              <FormHelperText error={true}>{messageerror}</FormHelperText>
-                            </FormControl>
+                    <Col xs='12' className="">
+                    <TextField id="outlined-basic" label="MESSAGE" multiline rows={12} variant="outlined" style={{width:'100%'}}/>
+                    {/*<FormControl className="w-100">
+                      <InputLabel htmlFor="my-input" id="outlined-basic" label="Outlined" variant="outlined">MESSAGE</InputLabel>
+                      <Input onChange={(e) => inputchange(e,"message")} error={!!messageerror} id="my-input" aria-describedby="my-helper-text">
+                        <TextField multiline id="filled-basic" label="Filled" variant="filled" />
+                      </Input>
+                      <FormHelperText error={true}>{messageerror}</FormHelperText>
+                    </FormControl>*/
+                    }
                     </Col>
                     </Row>
                 </Col>

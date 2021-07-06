@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import HeaderBar from "../components/header";
-import { Clientsblock, Partnershipblock, Whoweareblock } from "../components/Homepageblocks";
+import { Clientsblock, Partnershipblock, Whoweareblock, Features } from "../components/Homepageblocks";
 
 export const Aboutuspage = (props) => {
     useEffect(()=>{
@@ -9,8 +9,10 @@ export const Aboutuspage = (props) => {
     return(
         <>
         <HeaderBar activeitem={1} notransition/>
+        <div style={{height:'50px'}} />
         <Whoweareblock/>
         <Partnershipblock />
+        <Features />
         <Clientsblock />
         </>
     );

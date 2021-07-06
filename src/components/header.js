@@ -31,23 +31,55 @@ export const Collapsedheader = (props) => {
 
 
     const navigationmap = require('../mocks/navigation').navigationmap;
-    
+    const ulclassnames = props.notransition ? "navbar-nav mx-auto py-1 px-5 header-notransition-bg-color" : "navbar-nav mx-auto py-1 px-5";
     const getNavitems = () => {
         const menuitems = navigationmap.map((item, index) => {
-            console.log(item)
-            const classname = index === activeitem? "nav-item active" : "nav-item";
-            const classname1 = index === activeitem? "nav-link active" : "nav-link";
+            const classname = (index === activeitem? "nav-item active" : "nav-item") + " " + (item.children.length>0?"dropdown" : "");
+            const classname1 = (index === activeitem? "nav-link active" : "nav-link");// + " " + (item.children.length>0?"dropdown-toggle" : "");
+            var childrenlist;
+            if(item.children.length > 0){
+              childrenlist = item.children.map((item) => {
+                var childrenlist2;
+                if(item.children.length > 0){
+                  childrenlist2 = item.children.map((item) => {
+                    return(
+                        <li className="ps-1 fs-5">
+                          <Link className="dropdown-item">
+                            {item.name}
+                          </Link>
+                        </li>
+                    );
+                  })
+                }
+                return(
+                    <li className="ps-1 fs-5 dropdown-menu-head" style={{position:'relative'}}>
+                      <Link className="dropdown-item">
+                          {item.name}
+                      </Link>
+                      { item.children.length>0 &&
+                      <ul className="drop-down-hover-menu dropdown-left">
+                          {childrenlist2}
+                      </ul>
+                      }
+                    </li>
+                )
+              })
+            }
             return (
-                <li className={classname + " mx-5 fs-5"}>
-                    <Link className={classname1 + " unstyled"} to={item.path} style={{textDecoration:'none'}}>
+                <li className={classname + " mx-5 fs-5 dropdown-menu-head"}>
+                    <Link className={classname1} to={item.path} style={{textDecoration:'none'}}>
                         {item.name}
                     </Link>
+                    {item.children.length > 0 &&
+                    <ul className="drop-down-hover-menu list-unstyled p-0 text-start">
+                      {childrenlist}
+                    </ul>
+                    }
                 </li>
             );
         })
         setnavitems(menuitems);
     }
-    const ulclassnames = props.notransition ? "navbar-nav mx-auto py-1 px-5 header-notransition-bg-color" : "navbar-nav mx-auto py-1 px-5";
     return(
         <>
         <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent d-none d-lg-flex pt-0">
@@ -59,11 +91,12 @@ export const Collapsedheader = (props) => {
             </div>
           </Container>
         </nav>
+        
         <AppBar className="d-lg-none" position="fixed" color="secondary" style={{boxShadow:'none',zIndex:'999999',backgroundColor:`rgba(34,34,34,${opacity})`}} >
           <Toolbar variant="dense">
             <IconButton edge="start" color="inherit" aria-label="menu" style={{opacity:1}}>
               <button className="unstyledbutton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasmenu" aria-controls="offcanvasmenu">
-                <Colortransition transitioncolor="transparent" initialcolor='#cdb068'>
+                <Colortransition transitioncolor="transparent" initialcolor='#ffbd00'>
                   <span className="fas fa-bars" style={{color:'inherit'}} style={{filter:'drop-shadow'}}> </span>
                 </Colortransition>
               </button>
