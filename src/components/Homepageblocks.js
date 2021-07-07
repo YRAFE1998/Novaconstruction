@@ -96,7 +96,7 @@ const BootstrapCarousel = (props) => {
     const classnames = index == 0?"carousel-item active":"carousel-item";
     return(
       <div className={classnames}>
-          <img src={item} style={{objectFit:'contain',height:'100%'}} className="d-block w-100 my-auto" />
+          <Link to={"/products?id=" + item.id}><img src={item.path} style={{objectFit:'contain',height:'100%'}} className="d-block w-100 my-auto" /></Link>
       </div>
     )
   })
@@ -250,26 +250,33 @@ export const Features = (props)=>{
     return(
     <Styledblock bg={props.color} title='FEATURES' subtitle='' backimage="/assets/images/ba5.jpg">
         <Container style={{backdropFilter: 'blur(3px)'}}>
-            <Row className='mt-5 p-5' style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
-                <Col xs="6">
+            <Row className='mt-5 py-5 px-2 p-md-5' style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
+                <Col xs="12" md="6">
                     <H5>
                         We Provide plenty of Features Labore ullamco esse commodo enim do labore amet pariatur in consequat sint.Qui non aliqua incididunt in nulla laboris cillum tempor aliqua adipisicing labore sunt voluptate. Ex eiusmod culpa pariatur dolor sunt dolore dolor anim magna et nulla. Pariatur sunt officia nulla deserunt dolore anim esse laboris aliqua reprehenderit id est elit. Amet sunt cillum nostrud adipisicing sit sint commodo. Culpa ex ut ea adipisicing deserunt labore est tempor.
                     </H5>
-                    <GoldButton className="mt-4">
+                    <GoldButton className="mt-4 d-none d-md-block">
                         <Link to="/contactus" className="unstyled" >
                           Get in Touch
                         </Link> 
                     </GoldButton>
                 </Col>
-                <Col xs='6' className="text-center p-3 d-flex flex-column" >
+                <Col xs='12' md='6' className="text-center p-0 p-lg-3 d-flex flex-column" >
                     <Row className="my-auto" style={{fontSize:"1.3rem"}}>
-                        <Col xs='12' lg='6'>
+                        <Col xs='12' lg='6' className='mb-3 mt-5 my-lg-0'>
                             <i class="fas fa-universal-access fa-lg text-gold"> </i>
                             <span className="text-primary text-white"> After Sales</span>
                         </Col>
-                        <Col xs='12' lg='6' >
+                        <Col xs='12' lg='6' className='my-3 my-lg-0'>
                             <i class="fas fa-info-circle fa-lg text-gold"> </i>
                             <span className="text-primary text-white"> Customer support</span>
+                        </Col>
+                        <Col xs='12' className='text-center'>
+                        <GoldButton className="mt-4 d-block d-md-none mx-auto">
+                        <Link to="/contactus" className="unstyled" >
+                          Get in Touch
+                        </Link> 
+                        </GoldButton>
                         </Col>
                     </Row>
                 </Col>

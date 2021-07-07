@@ -43,7 +43,7 @@ export const Form = (props) => {
     return(
         <Styledblock bg={props.color} title='CONTACT US' subtitle='' backgroundpath={5} id="contactus" backimage="/assets/images/ba2.jpg">
         <Container fluid={true} className="mt-md-5 px-0 px-md-auto text-primarybold">
-            <Container className="px-lg-5 text-center py-4 rounded" style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}} id={props.color=="white"?"":"formwhite"}>
+            <Container className="px-lg-5 text-center py-4" style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}} id={props.color=="white"?"":"formwhite"}>
             <form onSubmit={(e) => submit(e)}>
                 <Row>
                 <Col xs='12' md='6' className="px-md-5">
@@ -79,7 +79,7 @@ export const Form = (props) => {
                 
                 </Row>
                 </Col>
-                <Col xs='6' className="px-md-5">
+                <Col xs='12' md="6" className="px-md-5">
                 <Row className="my-3">
                     <Col xs='12' className="">
                     <TextField id="outlined-basic" label="MESSAGE" multiline rows={12} variant="outlined" style={{width:'100%'}}/>

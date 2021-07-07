@@ -22,7 +22,7 @@ export const BootstrapCarousel = (props) => {
     const classnames = index == 0?"carousel-item active":"carousel-item";
     return(
       <div className={classnames} style={{maxHeight:'50vh'}}>
-          <img src={item} className="d-block h-100 mx-auto" />
+          <img src={item} className="d-block carouselimg-products mx-auto my-auto" />
       </div>
     )
   })
@@ -32,7 +32,7 @@ return(
       <div className="carousel-indicators">
         {indicators}
       </div>
-      <div className="carousel-inner px-5">
+      <div className="carousel-inner px-lg-5">
         {carouselInner}
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#productscarousel" data-bs-slide="prev">
@@ -299,10 +299,10 @@ export const Projectsblock = (props) => {
     var classnames = 'text-start m-0 pt-3 pt-xl-0 px-lg-5 text-white align-items-xl-center align-items-stretch';
     return (
     <Row className={classnames} >
-      <Col xs='12' className='text-center'>
+      <Col xs='12' className='text-center mb-5'>
         <img className='imgfit' src={item.logo}/>
       </Col>
-      <Col xs="12" className="align-self-center order-lg-0 order-1 mt-5 mt-lg-0">
+      <Col xs="12" className="align-self-center mt-5 mt-lg-0">
         <Row>
           <Col xs="12">
             <BlockTitle color="white">
@@ -314,31 +314,20 @@ export const Projectsblock = (props) => {
           </Col>
         </Row>
       </Col>
-      <Col xs='12'  className="order-lg-1 order-0 px-5 mt-5">
+      <Col xs='12'  className="px-lg-5 my-5 px-0">
         <BootstrapCarousel items={item.machines} />
       </Col>
     </Row>
     )
   };
 
-  const blockclasses = props.paddingtop ? "text-center align-self-start mx-auto pt-5": "text-center align-self-start mx-auto";
+  const blockclasses = props.paddingtop ? "text-center align-self-start mx-auto pt-5 my-5": "text-center align-self-start mx-auto my-5";
   var showbg = true;
   const content = 
-  <Container style={{minHeight:'100vh', position:'relative'}} fluid={true} className={"py-xl-4 px-md-5 d-flex flex-column justify-content-around " + (showbg ? "my-bg-dark":"force-text-dark")} id="products">
+  <Container style={{minHeight:'100vh', position:'relative'}} fluid={true} className={"py-xl-5 px-md-5 d-flex flex-column justify-content-around " + (showbg ? "my-bg-dark":"force-text-dark")} id="products">
     {showbg &&<img src="/assets/images/ba6.jpg" style={{position: 'absolute', top:0, width: '100%',height: '100%',left: 0,objectFit: 'cover', filter:'blur(5px)',opacity:'0.7', zIndex:'1'}} />
     }
     <Row className={blockclasses} style={{width:'100%', zIndex:'2', backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
-      {!props.showall &&
-      <Col xs="12" className="mt-5">
-          <Zoom>
-              <BlockTitle color="white">
-                <>
-                  <hr className="me-3" style={{display:'inline-block',verticalAlign:'middle'}}/> OUR PROJECTS <hr className="ms-3" style={{display:'inline-block',verticalAlign:'middle'}}/>
-                </>
-              </BlockTitle>
-          </Zoom>
-      </Col>
-      }
       <Col xs='12' style={{height:''}} className="text-black">
         {singleitem(currentpartner)}
       </Col>

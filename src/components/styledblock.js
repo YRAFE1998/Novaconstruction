@@ -41,7 +41,7 @@ export const Styledblock = (props) => {
     return(
         <Container style={{minHeight:'100vh',position:'relative'}} fluid={true} className={colorclasses + " d-flex flex-column pb-5 justify-content-center align-items-center"} id={props.id}>
           {!whitebackground && <img src={backimage} style={{position: 'absolute', width: '100%',height: '100%',left: 0, top:0, objectFit: 'cover', filter:'blur(5px)',opacity:'0.7'}} /> }
-        <Row className="text-center mx-auto" style={{width:'100%'}}>
+        <Row className="text-center mx-auto my-4 my-md-0" style={{width:'100%'}}>
                 <Col xs="12" className="mt-3">
                 <Zoom>
                     <BlockTitle color={props.bg == "white"?"#196bde":"white"}>

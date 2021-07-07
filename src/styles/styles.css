@@ -781,6 +781,16 @@ a.unstyled:hover{
     border-width: 2px;
 }
 
+.carouselimg-products{
+    max-height: 100%;
+    max-width: 100%;
+}
+/*
+@media(max-width:)
+.carouselimg-products{
+    width: 100%;
+}
+*/
 /*
 .MuiOutlinedInput-notchedOutline{
     border-color: white !important;
