@@ -16,6 +16,7 @@ const HomePage =  React.lazy(() => import('./pages/home'));
 const Aboutuspage =  React.lazy(() => import('./pages/aboutus'));
 const Contactuspage =  React.lazy(() => import('./pages/contactus'));
 const ProductsPage =  React.lazy(() => import('./pages/products'));
+const Thankyoupage = React.lazy(() => import('./pages/thankyou'));
 
 
 function App() {
@@ -49,9 +50,14 @@ function App() {
           <ProductsPage />
         </Route>
         
+        <Route exact path="/thankyou">
+          <Thankyoupage />
+        </Route>
+
         <Route exact path="/">
           <HomePage />
         </Route>
+
       </Offsetcontext.Provider>
       </Switch>
       <Footer />

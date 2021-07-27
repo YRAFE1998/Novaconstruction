@@ -5,17 +5,19 @@ import {Container, Row, Col} from 'reactstrap';
 import { GoldButton } from '../styledcomponents/buttons';
 import Styledblock from './styledblock';
 import {axiosConfig} from '../utils/axioshelper';
+import { useHistory } from 'react-router-dom';
 const axios = require('axios');
+
 
 const apiUrl = 'https://novaengineeringapi.herokuapp.com';
 
 
 export function YourPost(object) {
-  console.log("-------------PETER---------- ", object);
   return axios.post(`${apiUrl}/api/getaquote`, object, axiosConfig());
 }
 
 export const Form = (props) => { 
+    const history = useHistory();
     const emailerror = "";
     const nameerror = "";
     const companyerror="";
@@ -30,10 +32,10 @@ export const Form = (props) => {
       e.preventDefault();
       YourPost(form)
       .then(res => {
-        console.log(res);
+        history.push('/thankyou');
       })
       .catch(err =>{
-        console.log(err);
+        window.alert("There was a problem submitting your request, Please try again later, or simply call us at");
       })
   }
 
@@ -82,15 +84,7 @@ export const Form = (props) => {
                 <Col xs='12' md="6" className="px-md-5">
                 <Row className="my-3">
                     <Col xs='12' className="">
-                    <TextField id="outlined-basic" label="MESSAGE" multiline rows={12} variant="outlined" style={{width:'100%'}}/>
-                    {/*<FormControl className="w-100">
-                      <InputLabel htmlFor="my-input" id="outlined-basic" label="Outlined" variant="outlined">MESSAGE</InputLabel>
-                      <Input onChange={(e) => inputchange(e,"message")} error={!!messageerror} id="my-input" aria-describedby="my-helper-text">
-                        <TextField multiline id="filled-basic" label="Filled" variant="filled" />
-                      </Input>
-                      <FormHelperText error={true}>{messageerror}</FormHelperText>
-                    </FormControl>*/
-                    }
+                    <TextField id="outlined-basic" onChange={(e) => inputchange(e,"message")} label="MESSAGE" multiline rows={12} variant="outlined" style={{width:'100%'}}/>
                     </Col>
                     </Row>
                 </Col>
