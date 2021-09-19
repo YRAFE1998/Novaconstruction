@@ -1,0 +1,93 @@
+export 
+const clientslogos = [
+{
+    "path":"assets/images/clientslogos/20.jpg",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ik1"
+},
+{
+    "path":"assets/images/clientslogos/1.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig5"
+},
+{
+    "path":"assets/images/clientslogos/2.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig6"
+},
+{
+    "path":"assets/images/clientslogos/3.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih5"
+},
+{
+    "path":"assets/images/clientslogos/4.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih2"
+},
+{
+    "path":"assets/images/clientslogos/5.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig7"
+},
+{
+    "path":"assets/images/clientslogos/6.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig3"
+},
+{
+    "path":"assets/images/clientslogos/7.jpg",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig1"
+},
+{
+    "path":"assets/images/clientslogos/8.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig2"
+},
+{
+    "path":"assets/images/clientslogos/9.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig4"
+},
+{
+    "path":"assets/images/clientslogos/10.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih6"
+},
+{
+    "path":"assets/images/clientslogos/11.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig9"
+},
+{
+    "path":"assets/images/clientslogos/12.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig8"
+},
+{
+    "path":"assets/images/clientslogos/13.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih4"
+},
+{
+    "path":"assets/images/clientslogos/14.jpg",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih7"
+},
+{
+    "path":"assets/images/clientslogos/15.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ii1"
+},
+{
+    "path":"assets/images/clientslogos/16.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih3"
+},
+{
+    "path":"assets/images/clientslogos/17.jpg",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih1"
+}/*,
+{
+    "path": "assets/images/clientslogos/18.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih9"
+}*/,
+{   "path":"assets/images/clientslogos/19.png",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih8"
+},
+{
+    "path":"assets/images/clientslogos/21.JPG",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ik2"
+},
+{
+    "path":"assets/images/clientslogos/22.JPG",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ik3"
+},
+{
+    "path":"assets/images/clientslogos/23.JPG",
+    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ik4"
+}]

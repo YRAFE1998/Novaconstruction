@@ -17,6 +17,7 @@ const Aboutuspage =  React.lazy(() => import('./pages/aboutus'));
 const Contactuspage =  React.lazy(() => import('./pages/contactus'));
 const ProductsPage =  React.lazy(() => import('./pages/products'));
 const Thankyoupage = React.lazy(() => import('./pages/thankyou'));
+const Digitalsolutionspage = React.lazy(() => import('./pages/digitalsolutions'));
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
   return (
     <Suspense fallback={<Spinner />}>
    
-    <Router //basename="/"
+    <Router /*basename="/"*/
     >
       <Switch>
       <Offsetcontext.Provider value={offsetY}>
@@ -50,6 +51,10 @@ function App() {
           <ProductsPage />
         </Route>
         
+        <Route exact path="/solutions">
+          <Digitalsolutionspage />
+        </Route>
+
         <Route exact path="/thankyou">
           <Thankyoupage />
         </Route>

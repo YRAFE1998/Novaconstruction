@@ -1,7 +1,7 @@
 import $ from 'jquery';
 export const scrolltofirstblock = () => {
     $([document.documentElement, document.body]).animate({
-        scrollTop: $("#whoweare").offset().top
+        scrollTop: $("#clients").offset().top - 50
     }, 0);
 
 }

@@ -28,7 +28,6 @@ export const Form = (props) => {
     const [form,setform]=useState({});
 
     const submit = (e) => {
-      console.log(e);
       e.preventDefault();
       YourPost(form)
       .then(res => {

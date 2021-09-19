@@ -6,83 +6,8 @@ import { Foundercard, Profilecard } from "./profilecard";
 import Zoom from 'react-reveal/Zoom';
 import { Link } from 'react-router-dom';
 
-
-const clientslogos = [
-{
-    "path":"assets/images/clientslogos/1.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig5"
-},
-{
-    "path":"assets/images/clientslogos/2.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig6"
-},
-{
-    "path":"assets/images/clientslogos/3.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih5"
-},
-{
-    "path":"assets/images/clientslogos/4.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih2"
-},
-{
-    "path":"assets/images/clientslogos/5.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig7"
-},
-{
-    "path":"assets/images/clientslogos/6.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig3"
-},
-{
-    "path":"assets/images/clientslogos/7.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig1"
-},
-{
-    "path":"assets/images/clientslogos/8.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig2"
-},
-{
-    "path":"assets/images/clientslogos/9.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig4"
-},
-{
-    "path":"assets/images/clientslogos/10.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih6"
-},
-{
-    "path":"assets/images/clientslogos/11.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig9"
-},
-{
-    "path":"assets/images/clientslogos/12.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ig8"
-},
-{
-    "path":"assets/images/clientslogos/13.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih4"
-},
-{
-    "path":"assets/images/clientslogos/14.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih7"
-},
-{
-    "path":"assets/images/clientslogos/15.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ii1"
-},
-{
-    "path":"assets/images/clientslogos/16.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih3"
-},
-{
-    "path":"assets/images/clientslogos/17.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih1"
-},
-{
-    "path": "assets/images/clientslogos/18.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih9"
-},
-{   "path":"assets/images/clientslogos/19.png",
-    "id":"k7q238y784c7687cn7yc47h746c6g7ch83ih8"
-}]
+import {clientslogos} from '../mocks/clientslogos';
+import { Featuresstyles } from '../styledcomponents/features';
 
 const BootstrapCarousel = (props) => {
     const indicators = props.items.map((item, index) =>{
@@ -106,7 +31,7 @@ return(
       <div className="carousel-indicators">
         {indicators}
       </div>
-      <div className="carousel-inner">
+      <div className="carousel-inner px-4" style={{height:'180px'}}>
         {carouselInner}
       </div>
       <button className="carousel-control-prev logoscontrolleft" type="button" data-bs-target="#logoscarousel" data-bs-slide="prev">
@@ -232,28 +157,23 @@ export const Clientsblock = (props) => {
     const logossmall =  <Col xs='12' className='d-block d-md-none'> <BootstrapCarousel items={clientslogos} /></Col>
     return(
     <Styledblock1 bg='white' title='OUR PARTNERS' subtitle='We have worked with some amazing companies around the world' backgroundpath={4} id="clients">
-        <Container style={{backdropFilter: 'blur(3px)',backgroundColor: '#FFFFFF2F'}}>
-            <Row className='mt-5'>
-                <Col xs='12' className="text-center">
-                    <Row>
-                        {logosbig}
-                        {logossmall}
-                    </Row>
-                </Col>
+            <Row className='mt-5 text-center'>
+                {logosbig}
+                {logossmall}
             </Row>
-        </Container>
+               
     </Styledblock1>
     )
 }
 
 export const Features = (props)=>{
     return(
-    <Styledblock bg={props.color} title='FEATURES' subtitle='' backimage="/assets/images/ba5.jpg">
+    <Styledblock bg={props.color} title='TECHNICAL SUPPORT' subtitle='' backimage="/assets/images/ba5.jpg">
         <Container style={{backdropFilter: 'blur(3px)'}}>
-            <Row className='mt-5 py-5 px-2 p-md-5' style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
-                <Col xs="12" md="6">
+            <Row className='mt-5 py-5 px-2 p-md-5 align-items-stretch' style={{backdropFilter: 'blur(3px)',backgroundColor: 'rgba(0,0,0,0.384)'}}>
+                <Col xs="12" md="6" className="d-flex flex-column justify-content-center align-items-start">
                     <H5>
-                        We Provide plenty of Features Labore ullamco esse commodo enim do labore amet pariatur in consequat sint.Qui non aliqua incididunt in nulla laboris cillum tempor aliqua adipisicing labore sunt voluptate. Ex eiusmod culpa pariatur dolor sunt dolore dolor anim magna et nulla. Pariatur sunt officia nulla deserunt dolore anim esse laboris aliqua reprehenderit id est elit. Amet sunt cillum nostrud adipisicing sit sint commodo. Culpa ex ut ea adipisicing deserunt labore est tempor.
+                    We keep track of every little detail to ensure the quality we deliver to each project Our after-sales, and technical support departments are working around the clock to serve and elevate each project we work on
                     </H5>
                     <GoldButton className="mt-4 d-none d-md-block">
                         <Link to="/contactus" className="unstyled" >
@@ -261,15 +181,27 @@ export const Features = (props)=>{
                         </Link> 
                     </GoldButton>
                 </Col>
-                <Col xs='12' md='6' className="text-center p-0 p-lg-3 d-flex flex-column" >
-                    <Row className="my-auto" style={{fontSize:"1.3rem"}}>
-                        <Col xs='12' lg='6' className='mb-3 mt-5 my-lg-0'>
-                            <i class="fas fa-universal-access fa-lg text-gold"> </i>
-                            <span className="text-primary text-white"> After Sales</span>
+                <Col xs='12' md='6' className="mt-5 mt-lg-0 ps-lg-5 p-lg-3 d-flex flex-column align-items-start" >
+                    <Featuresstyles className="my-auto row" style={{fontSize:"1.3rem"}}>
+                        <Col xs='12' className='mb-1 '>
+                            <i className="fas fa-tools fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> Installation</span>
                         </Col>
-                        <Col xs='12' lg='6' className='my-3 my-lg-0'>
-                            <i class="fas fa-info-circle fa-lg text-gold"> </i>
-                            <span className="text-primary text-white"> Customer support</span>
+                        <Col xs='12' className='my-1 '>
+                            <i className="fas fa-money-check-alt fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> Startup/commissioning</span>
+                        </Col>
+                        <Col xs='12' className='my-1 '>
+                            <i className="fas fa-user-cog fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> Training</span>
+                        </Col>
+                        <Col xs='12' className='my-1 '>
+                            <i className="fas fa-info-circle fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> Qualification</span>
+                        </Col>
+                        <Col xs='12' className='my-1 '>
+                            <i className="fas fa-laptop fa-lg text-gold"> </i>
+                            <span className="text-primary text-white"> After Sales</span>
                         </Col>
                         <Col xs='12' className='text-center'>
                         <GoldButton className="mt-4 d-block d-md-none mx-auto">
@@ -278,7 +210,7 @@ export const Features = (props)=>{
                         </Link> 
                         </GoldButton>
                         </Col>
-                    </Row>
+                    </Featuresstyles>
                 </Col>
             </Row>
         </Container>

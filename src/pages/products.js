@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import HeaderBar from "../components/header";
 import { Projectsblock } from "../components/projectsblock"
-
 export const ProductsPage = (props) => {
+
+    
     useEffect(()=>{
         window.scrollTo(0, 0);
     },[])
